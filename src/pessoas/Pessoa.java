@@ -1,14 +1,22 @@
 package pessoas;
 
-import composicao.Endereco;
-
 public class Pessoa {
     private String nome;
     private String dataNascimento;
-    private Endereco endereco;
-    private String telsContato;
+    private String endereco; //Composição - Pessoa tem um endereço
+    private String telsContato; //Composição - Pessoa tem um telefone
 
-    private void cadastrar() {
+    public Pessoa(String nome, String dataNascimento) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
+
+    //Método para realizar o cadastro inicial
+    public void cadastrar() {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.telsContato = telsContato;
 
     }
 
@@ -18,12 +26,18 @@ public class Pessoa {
         return idade;
     }
 
+    //Criação do método construtor principal
+    public Pessoa () {
+        this("", "");
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public String setNome(String nome) {
         this.nome = nome;
+        return nome;
     }
 
     public String getDataNascimento() {
@@ -34,11 +48,11 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
